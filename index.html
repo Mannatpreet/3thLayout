@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunndeep Telecom</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link
+      rel="icon"
+      type="image/png"
+      href="favicon_io (1)\android-chrome-192x192.png"
+    />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style-type: none;
+            box-sizing: border-box;
+            /* user-select: none; */
+        }
+        body {
+            background-color: rgb(53, 56, 53);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .headercover {
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            position: sticky;
+            top: 0px;
+            left: 0px;
+        }
+        #header {
+            height: 80px;
+            width: 97%;
+            display: flex;
+            background-color: rgb(86, 152, 245);
+            border-bottom: 2px solid rgb(53, 56, 53);
+            border-top-left-radius: 32px ;
+            border-top-right-radius: 32px ;
+            align-items: center;
+        }
+        #logo {
+            width: 74px;
+            height: 74px;
+            border: 2px solid rgb(53, 56, 53);
+            border-radius: 50%;
+            margin: 3px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+        #titleofpage {
+            font-size: 38px;
+            text-shadow: 3px 3px 7px rgb(230, 238, 250);
+            color: rgb(53, 56, 53);
+            font-family: montserrat;
+            line-height: 80px;
+        }
+        .navitem {
+            display: block;
+            width: 120px;
+            height: 40px;
+            float: left;
+            font-size: 22px;
+            padding: 1px;
+            font-family: arial;
+            margin-left: 14px ;
+            background-color: rgb(0, 255, 0);
+            color: black;
+            border: 2px solid black;
+            text-align: center;
+            position: relative;
+            top: 18px;
+        }
+        .navitem a {
+            display: block;
+            color: black;
+        }
+        #leftmargin {
+            display: block;
+            float: left;
+            line-height: 80px;
+            margin-left: 145px;
+        }
+        #leftmargin input{
+            font-size: 24px;
+            width: 130px;
+            transition: width 1s, height 1s;
+        }
+        #leftmargin input:focus {
+            width: 250px;
+            background-color: rgb(154, 255, 150);
+            color: black;
+        }
+        #search {
+            font-size: 22px;
+            width: 40px;
+            margin-left: 0;
+            transform: none;
+        }
+        #alignleft {
+            text-align: center;
+            width: 120px;
+        }
+        #alignleft:hover .submenuitem{
+            display: block;
+        }
+        .css:hover {
+            background-color: rgb(255, 150, 252);
+            color: black;
+        }
+        #copyright {
+            font-size: 23px;
+            position: relative;
+            bottom: 11px;
+            color: rgb(53, 56, 53);
+            font-family: montserrat;
+        }
+        footer {
+            height: auto;
+            width: 100%;
+            background-color: rgb(82, 79, 89);
+            color: white;
+            font-size: 20px;
+            font-family: arial;
+        }
+        footer a {
+            color: white;
+        }
+        #arr {
+            text-align: center;
+        }
+        #arr2 {
+            text-align: center;
+        }
+        .formarea {
+            height: 500px;
+            background-color: white;
+            border-top: 3px solid rgb(53, 56, 53);
+        }
+        fieldset {
+            border: 3px solid rgb(53, 56, 53);
+            margin: auto;
+            width: 40%;
+            margin-top: 0;
+            color: black;
+            font-family: arial;
+            font-size: 18px;
+            background-color: rgb(86, 152, 245);
+        }
+        #ofc {
+            text-align: center;
+            font-family: montserrat;
+            font-size: 38px;
+            color: black;
+            background-color: rgb(0, 255, 0);
+            width: 80%;
+            margin: auto;
+            border-radius: 50px;
+            position: relative;
+            top: 5px;
+        }
+        .formarea input {
+            margin: auto;
+            margin-left: 12px;
+            color: black;
+            font-size: 21px;
+            margin-top: 6px;
+            width: 70%;
+            position: relative;
+            left: 80px;
+        }
+        .allfield {
+            width: 250px;
+        }
+        label {
+            margin-left: 12px;
+            font-size: 23px;
+            position: relative;
+            left: 80px;
+            margin-top: 4px;color: rgb(53, 56, 53);
+            font-weight: bold;
+        }
+        textarea {
+            resize: none;
+            position: relative;
+            left: 92px;
+            width: 70%;
+            height: 170px;
+            font-size: 20px;
+        }
+        textarea:focus {
+            font-size: 20px;
+            background-color: rgb(154, 255, 150);
+        }
+        .formarea input:focus {
+            background-color: rgb(154, 255, 150);
+        }
+        .mobilearea {
+            display:  flex;
+            border-bottom: 3px soild rgb(53, 56, 53);
+        }
+        .mobilebg {
+            background-image: url(b2.jpg);
+            background-position: center;
+            background-size: cover;
+            width: 60%;
+            height: 610px;
+            animation-name: mannat1;
+            animation-duration: 40s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+        .mobilecontent {
+            height: 610px;
+            max-width: 40%;
+            width: 40%;
+            background-color: rgb(166, 173, 255);
+            display: flex;
+        }
+        .actualcontent1 {
+            border: 2px solid black;
+            width: 610px;
+            width: 80%;
+            height: 400px;
+            margin: auto;
+            font-size: 21px;
+            font-family: arial;
+            padding: 25px;
+            animation-name: mannat2;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+        .actualcontent1 ul li{
+            list-style-type: square;
+            margin-left: 17px;  
+        }
+        .actualcontent2 ul li{
+            list-style-type: square;
+            margin-left: 17px;  
+        }
+        .earactualcontent ul li {
+            list-style-type: square;
+            margin-left: 17px;
+        }
+        @keyframes mannat1 {
+            0% {
+                background-image: url(b2.jpg);
+                background-position: center;
+                background-size: cover;
+                width: 60%;
+                height: 610px;
+            }
+            25% {
+                background-image: url(b1.png);
+                background-position: center;
+                background-size: cover;
+                width: 60%;
+                height: 610px;
+            }
+            50% {
+                background-image: url(b3.jpg);
+                background-position: center;
+                background-size: cover;
+                width: 60%;
+                height: 610px;
+            }
+            75% {
+                background-image: url(b7.jpg);
+                background-position: center;
+                background-size: cover;
+                width: 60%;
+                height: 610px;
+            }
+        }
+        @keyframes mannat2 {
+                0% {
+                    background-color: rgb(154, 255, 150);
+                    border-radius: 0%;
+                }
+                25% {
+                    background-color: rgb(133, 243, 255);
+                    border-radius: 65px;
+                }
+                75% {
+                    background-color: rgb(154, 255, 150);
+                    border-radius: 32px;
+                }
+                100% {
+                    background-color: rgb(133, 243, 255);
+                    border-radius: 0%;
+                }
+        }
+        #pom {
+            font-weight: bold;
+            text-align: justify;
+        }
+        .submenuitem {
+            display: block;
+            width: 130px;
+            height: 35px;
+            text-align: center;
+            background-color: rgb(154, 255, 150);
+            border-bottom: 2px solid black;
+            padding: 7px;
+            display: none;
+        }
+        .submenuitem:hover {
+            background-color: rgb(255, 150, 252);
+        }
+        #submenuitem1 {
+            margin-top: 10px;
+        }
+        #submenu {
+            box-shadow: 0 6px 18px 0 black;
+        }
+        #submenu2 {
+            box-shadow: 0 18px 18px 0 black;
+        }
+        .csubmenuitem {
+            display: none;
+            width: 320px;
+            height: 35px;
+            text-align: center;
+            background-color: rgb(154, 255, 150);
+            border-bottom: 2px solid black;
+            padding: 7px;
+            position: relative;
+            right: 100px;
+        }
+        #submenuitem4 {
+            margin-top: 10px;
+        }
+        .csubmenuitem:hover{
+            background-color: rgb(255, 150, 252);
+        }
+        #cch:hover .csubmenuitem{
+            display: block;
+        }
+        #ms {
+            width: 330px;
+            font-size: 22px;
+            margin-top: 18px;
+            margin-right: 0;
+        }
+        #ms:focus {
+            background-color: rgb(166, 173, 255);
+        }
+        #msi {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            margin-left: 0;
+            font-size: 22px;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 26px;
+        }
+        .laptopmaincontent {
+            display: flex;
+            border-top: 3px solid rgb(53, 56, 53);
+        }
+        .laptopleftcontent {
+            height: 610px;
+            max-width: 40%;
+            width: 40%;
+            background-color: rgb(166, 173, 255);
+            display: flex;
+        }
+        .actualcontent2 {
+            border: 2px solid black;
+            width: 610px;
+            width: 80%;
+            height: 400px;
+            margin: auto;
+            font-size: 21px;
+            font-family: arial;
+            padding: 25px;
+            animation-name: mannat2;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+        .laptoprightcontent {
+            background-image: url(c1.jpg);
+            background-position: center;
+            background-size: cover;
+            width: 60%;
+            height: 610px;
+            animation-name: mannat3;
+            animation-duration: 40s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+
+        }
+        @keyframes mannat3 {
+            0% {
+                background-image: url(c1.jpg);
+                background-position: center;
+                background-size: cover;
+                width: 60%;
+                height: 610px;
+            }
+            25% {
+                background-image: url(c4.jpg);
+                background-position: center;
+                background-size: cover;
+                width: 60%;
+                height: 610px;
+            }
+            50% {
+                background-image: url(c2.jpg);
+                background-position: center;
+                background-size: cover;
+                width: 60%;
+                height: 610px;
+            }
+            75% {
+                background-image: url(c3.jpg);
+                background-position: center;
+                background-size: cover;
+                width: 60%;
+                height: 610px;
+            }
+        }
+        .earmaincontent {
+            display: flex;
+            border-top: 3px solid rgb(53, 56, 53);
+        }
+        .earleftcontent {
+            height: 610px;
+            width: 60%;
+            background-image: url(a11.jpg);
+            background-position: center;
+            background-size: cover;
+            animation-name: mannat5;
+            animation-duration: 40s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+        .earrightcontent {
+            width: 40%;
+            height: 610px;
+            background-color: rgb(166, 173, 255);
+            display: flex;
+        }
+        @keyframes mannat5 {
+            0% {
+                background-image: url(a11.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+            25% {
+                background-image: url(a4.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+            75% {
+                background-image: url(a10.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+            100% {
+                background-image: url(a12.jpg);
+                background-position: center;
+                background-size: cover;
+            } 
+        }
+        .earactualcontent {
+                border: 2px solid black;
+                width: 610px;
+                width: 80%;
+                height: 400px;
+                margin: auto;
+                font-size: 21px;
+                font-family: arial;
+                padding: 25px;
+                animation-name: mannat2;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease;
+        }
+        #submitbtn {
+            width: 200px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            position: relative;
+            left: 190px;
+            background-color: rgb(154, 255, 150);
+            border: 3px solid black;
+            cursor: pointer;
+        }
+        .igarea {
+            height: 660px;
+            background-color: white;
+            border-top: 3px solid rgb(53, 56, 53);
+        }
+        .igh {
+            width: 70%;
+            height: 60px;
+            background-color: rgb(0, 255, 0);
+            border-bottom: 1px solid black;
+            border-top-right-radius: 35px;
+            margin-top: 0px;
+        }
+        #igh {
+            font-family: montserrat;
+            font-size: 36px;
+            margin-left: 40px;
+            line-height: 60px;
+            color: black;
+        }
+        .igactualarea {
+            height: 600px;
+            background-color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .firstig {
+            width: 29%;
+            height: 510px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid black;
+            box-shadow: 0 10px 20px 0 black;
+        }
+        .firstigphoto {
+            background-image: url(iga2.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 470px;
+            width: 100%;
+            animation-name: iga1 ;
+            animation-duration: 42s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            
+        }
+        #firstigname {
+            font-family: arial;
+            width: 100%;
+            margin-top: 3px;
+            height: 40px;
+            font-size: 24px;
+            text-align: center;
+            background-color: rgb(133, 243, 255);
+            color: black;
+            line-height: 40px;
+        }
+        .secondigphoto {
+            background-image: url(iga4.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 470px;
+            width: 100%;
+            animation-name: iga2 ;
+            animation-duration: 42s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+        .thirdigphoto {
+            background-image: url(ig1.jfif);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 470px;
+            width: 100%;
+            animation-name: iga3;
+            animation-duration: 42s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+        @keyframes iga1 {
+            0% {
+                background-image: url(iga2.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            33% {
+                background-image: url(iga10.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            66% {
+                background-image: url(iga1.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            
+        }
+        @keyframes iga2 {
+            0% {
+                background-image: url(iga4.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            33% {
+                background-image: url(iga5.jfif);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            66% {
+                background-image: url(igas12.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            
+        }
+        @keyframes iga3 {
+            0% {
+                background-image: url(ig1.jfif);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            33% {
+                background-image: url(iga7.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            66% {
+                background-image: url(iga8.jfif);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+        }
+        #submenu {
+            box-shadow: -1px 5px 47px -1px rgba(0,0,0);
+        }
+        #submenu2 {
+            box-shadow: -1px 5px 47px -1px rgba(0,0,0);
+        }
+            
+
+    </style>
+</head>
+<body>
+    <div class="headercover">
+        <header id="header">
+            <img id="logo" src="logo.jpeg" alt="logo" </img>
+            <h3 id="titleofpage">Gunndeep Telecom<h3 id="copyright">&#174;</h3></h3>
+            <nav>
+                <ul>
+                    <li class="navitem1 " id="leftmargin"><input type="search" placeholder="Search.."></input></li>
+                    <li class="navitem css" id="search"><span class="material-icons">
+                        search
+                        </span></li>
+                    <li class="navitem css" id="alignleft" ><a href>Deals in<span class="material-icons">
+                        language
+                        </span></a>
+                        <ul id="submenu">
+                            <li class="submenuitem" id="submenuitem1"><a href="">Mobiles</a></li>
+                            <li class="submenuitem" id="submenuitem2"><a href="">Computers</a></li>
+                            <li class="submenuitem" id="submenuitem3"><a href="">Headsets</a></li>
+                        </ul>
+                    </li>
+                    <li class="navitem css" ><a href="#formarea">Career<span class="material-icons">
+                        face
+                        </span></a></li>
+                    <li class="navitem css"><a href>Maps<span class="material-icons">
+                        location_on
+                        </span></a></li>
+                    <li class="navitem css" id="cch"><a href>Contact<span class="material-icons">
+                        phone
+                        </span></a>
+                        <ul id="submenu2">
+                            <li class="csubmenuitem" id="submenuitem4"><a href="">+91 9777067029</a></li>
+                            <li class="csubmenuitem" id="submenuitem5"><a href="">+91 8846954899</a></li>
+                            <li class="csubmenuitem" id="submenuitem6"><a href="">gunndeeptelecom@gmail.com</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+
+    <div class="mobilearea" id="mobilecoverpromax">
+        <div class="mobilebg">
+        </div>
+        <div class="mobilecontent">
+            <div class="actualcontent1">
+                <p id="pom">Unlike others we offer you a variety of choice in mobile phones. We offer you following brands which are available with us all the time. </p>
+                    <ul>
+                        <li>Apple</li>
+                        <li>Samsung</li>
+                        <li>Vivo</li>
+                        <li>Oppo</li>
+                        <li>Redmi</li>
+                        <li>Realme</li>
+                    </ul>
+                    <input id="ms" type="search" placeholder="Search mobile by name/brand"></input>
+                    <span id="msi" class="material-icons">search</span>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="laptopmaincontent">
+        <div class="laptopleftcontent">
+            <div class="actualcontent2">
+                <p id="pom">When it comes to computers, we provide you the most exciting computers & laptops at lowest prices. You can shop from us of these brands.</p>
+                <ul>
+                    <li>Apple</li>
+                    <li>Dell</li>
+                    <li>HP</li>
+                    <li>Lenovo</li>
+                    <li>Asus</li>
+                </ul>
+                <input id="ms" type="search" placeholder="Search laptop by name/brand"></input>
+                <span id="msi" class="material-icons">search</span>
+
+            </div>
+        </div>
+        <div class="laptoprightcontent">
+        </div>
+    </div>
+
+    <div class="earmaincontent">
+        <div class="earleftcontent">
+        </div>
+        <div class="earrightcontent">
+            <div class="earactualcontent">
+                <p id="pom">In our service we provide you the most demanded headsets as well which include earpods, earphones, headphones and much more. We offer you the following master brands </p>
+                <ul>
+                    <li>Redmi</li>
+                    <li>Bose</li>
+                    <li>Zebronics</li>
+                    <li>Apple</li>
+                    <li>JBL</li>
+                </ul>
+                <input id="ms" type="search" placeholder="Search headset by name/brand"></input>
+                <span id="msi" class="material-icons">search</span>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="igarea">
+        <div class="igh"><h4 id="igh">Latest Arrivals</h4></div>
+        <div class="igactualarea">
+            <div class="firstig">
+                <div class="firstigphoto"></div>
+                <div class="firstigname"><p id="firstigname">Realme 7 Pro</p></div>
+            </div>
+            <div class="firstig">
+                <div class="secondigphoto"></div>
+                <div class="firstigname"><p id="firstigname">Asus Vivobook</p></div>
+            </div>
+            <div class="firstig">
+                <div class="thirdigphoto"></div>
+                <div class="firstigname"><p id="firstigname">Apple Airpods Max</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="formarea" id="formarea">
+        <h2 id="ofc">Seeking out for a career</h2><br><br>
+        <form accept-charset="utf-8" autocomplete="off" target="_blank" method="post">
+            <fieldset>
+                <input type="text" name="name" id="name" placeholder="Enter your name" </input> <br>
+                <input type="email" name="email" id="email" placeholder="Enter your email" </input><br>
+                <input type="text" name="number" id="number" placeholder="Enter your mobile no." </input><br><br>
+                <label for="textarea">Enter your qualifications.</label><br>
+                <textarea name="textarea" rows="5" cols="5">I have___________</textarea>
+                <input type="submit" placeholder="Submit" id="submitbtn" class="allfield">                             
+            </fieldset> 
+        </form>
+    </div>
+
+    <footer>
+        <ul>
+            <li id="arr">2020-2021 All Rights Reserved  &#169</li>
+            <li>
+                <nav id="arr2">
+                    <a href="#mobilecoverpromax">Go to top | </a>
+                    <a href="#mobilecoverpromax">Privacy | </a>
+                    <a href="#mobilecoverpromax">Terms | </a>
+                </nav>
+            </li>
+        </ul>
+    </footer>
+    
+</body>
+</html>
